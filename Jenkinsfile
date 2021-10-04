@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Docker-build'){
             steps {
-                sh 'sudo docker build -t abdullahcodes/flask-app:latest ./app'
+                sh 'docker build -t abdullahcodes/flask-app:latest ./app'
             }
         }
 
@@ -30,7 +30,7 @@ pipeline {
 
         stage('Docker-push'){
             steps {
-                sh 'sudo docker push abdullahcodes/flask-app:latest'
+                sh 'docker push abdullahcodes/flask-app:latest'
             }
         }
 
