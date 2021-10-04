@@ -30,7 +30,7 @@ pipeline {
 
         stage('Docker-push'){
             steps {
-                sh 'docker push abdullahcodes/flask-app:latest'
+                sh 'docker push abdullahcodes/flask-app:${BUILD_NUMBER}'
             }
         }
 
