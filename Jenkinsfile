@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Docker-build'){
             steps {
-                sh 'docker build -t abdullahcodes/flask-app:latest ./app'
+                sh 'docker build -t abdullahcodes/flask-app:${BUILD_NUMBER} ./app'
             }
         }
 
