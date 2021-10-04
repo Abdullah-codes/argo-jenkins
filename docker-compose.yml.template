@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+    app:
+        image: abdullahcodes/flask-app:build
+        depends_on:
+            - db
+        ports:
+            - "5000:5000"
+    
+    db:
+       image: mariadb
+       ports:
+          - 32000:3306
+       volumes:
+          - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+       environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: foo
+          MYSQL_USER: abdullah
+          MYSQL_PASSWORD: test123
